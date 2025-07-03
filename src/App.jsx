@@ -2,12 +2,13 @@ import { useState } from "react";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("HOME");
 
   return (
     <>
       <div className="w-full h-full">
-        <div className="w-full h-[60px] bg-black sm:px-[40px] px-[20px] flex  justify-between items-center ">
-          <div className="flex gap-[24px]">
+        <header className="w-full sm:h-[80px] h-[60px] bg-black sm:px-[40px] px-[20px] flex  justify-between items-center ">
+          <nav className="flex gap-[24px]" aria-label="Main navigation">
             <div className="flex cursor-pointer items-center gap-[16px]">
               <img
                 className="w-[24px] h-[19px] block sm:hidden"
@@ -28,43 +29,37 @@ function App() {
             {menuOpen && (
               <div className="fixed top-[60px] left-0 right-0 bottom-0 bg-[#1F2023] p-[20px] z-[9999] sm:hidden">
                 <ul className="flex flex-col gap-[16px] ">
-                  <li className="w-full h-[48px] hover:bg-[#383A42] rounded-[100px] flex justify-center items-center font-body cursor-pointer font-medium text-[14px] leading-[20px] tracking-normal text-[#D2D2D2] hover:text-[#FFC700] uppercase">
-                    HOME
-                  </li>
-                  <li className="w-full h-[48px] hover:bg-[#383A42] rounded-[100px] flex justify-center items-center font-body cursor-pointer font-medium text-[14px] leading-[20px] tracking-normal text-[#D2D2D2] hover:text-[#FFC700] uppercase">
-                    Item1
-                  </li>
-                  <li className="w-full h-[48px] hover:bg-[#383A42] rounded-[100px] flex justify-center items-center font-body cursor-pointer font-medium text-[14px] leading-[20px] tracking-normal text-[#D2D2D2] hover:text-[#FFC700] uppercase">
-                    Item2
-                  </li>
-                  <li className="w-full h-[48px] hover:bg-[#383A42] rounded-[100px] flex justify-center items-center font-body cursor-pointer font-medium text-[14px] leading-[20px] tracking-normal text-[#D2D2D2] hover:text-[#FFC700] uppercase">
-                    Item3
-                  </li>
-                  <li className="w-full h-[48px] hover:bg-[#383A42] rounded-[100px] flex justify-center items-center font-body cursor-pointer font-medium text-[14px] leading-[20px] tracking-normal text-[#D2D2D2] hover:text-[#FFC700] uppercase">
-                    Item4
-                  </li>
+                  {["HOME", "Item1", "Item2", "Item3", "Item4"].map((item) => (
+                    <li
+                      key={item}
+                      className={`w-full h-[48px] hover:bg-[#383A42] rounded-[100px] flex justify-center items-center font-body cursor-pointer font-medium text-[14px] leading-[20px] tracking-normal uppercase ${activeMenu === item.toUpperCase()
+                        ? "text-[#FFC700] bg-[#383A42]"
+                        : "text-[#D2D2D2]"
+                        }`}
+                      onClick={() => setActiveMenu(item.toUpperCase())}
+                    >
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
             )}
 
             <ul className="hidden sm:flex  font-body font-[500] text-[14px] leading-[20px] tracking-[0%] uppercase ">
-              <li className="w-[80px] uppercase cursor-pointer h-[40px] rounded-full hover:bg-[#383A42] text-white flex justify-center items-center hover:text-[#FFC700]  ">
-                HOME
-              </li>
-              <li className="w-[80px] uppercase cursor-pointer h-[40px] rounded-full hover:bg-[#383A42] text-white flex justify-center items-center hover:text-[#FFC700]  ">
-                ITEM1
-              </li>
-              <li className="w-[80px] uppercase cursor-pointer h-[40px] rounded-full hover:bg-[#383A42] text-white flex justify-center items-center hover:text-[#FFC700]  ">
-                ITEM2
-              </li>
-              <li className="w-[80px] uppercase cursor-pointer h-[40px] rounded-full hover:bg-[#383A42] text-white flex justify-center items-center hover:text-[#FFC700]  ">
-                ITEM3
-              </li>
-              <li className="w-[80px] uppercase cursor-pointer h-[40px] rounded-full hover:bg-[#383A42] text-white flex justify-center items-center hover:text-[#FFC700]  ">
-                ITEM4
-              </li>
+              {["HOME", "ITEM1", "ITEM2", "ITEM3", "ITEM4"].map((item) => (
+                <li
+                  key={item}
+                  className={`w-[80px] uppercase cursor-pointer h-[40px] rounded-full hover:bg-[#383A42] flex justify-center items-center  ${activeMenu === item
+                    ? "bg-[#383A42] text-[#FFC700]"
+                    : "text-white hover:text-[#FFC700]"
+                    }`}
+                  onClick={() => setActiveMenu(item)}
+                >
+                  {item}
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
           <div className="flex gap-[8px]">
             <button className="font-title cursor-pointer text-[#1F1F1F] sm:w-[114px] sm:h-[40px] w-[98px] h-[36px] rounded-full bg-[#FFC700] hover:bg-[#C79B12]  font-extrabold italic text-[16px] leading-[24px] tracking-[0%] text-center align-middle uppercase">
               SIGN UP
@@ -73,10 +68,10 @@ function App() {
               LOG IN
             </button>
           </div>
-        </div>
+        </header>
 
-        <div className=" bg-black ">
-          <div className="w-full sm:h-[550px]  h-[180px] relative  ">
+        <main className="bg-black">
+          <section className="w-full sm:h-[450px] h-[180px] relative">
             <img
               className=" w-full h-full object-cover "
               src="/images/banner1.png"
@@ -93,74 +88,56 @@ function App() {
               <li className="w-[28px] h-[4px] hover:bg-[#FFC700] rounded-[20px] cursor-pointer bg-white"></li>
               <li className="w-[28px] h-[4px] hover:bg-[#FFC700] rounded-[20px] cursor-pointer bg-white"></li>
             </ul>
-          </div>
+          </section>
 
-          <div className="w-full sm:h-[121.88px] h-[92px] bg-[#1F2023] flex justify-center items-center ">
+          <section className="w-full sm:h-[121.88px] h-[92px] bg-[#1F2023] flex justify-center items-center ">
             <div className="max-w-[1128px] w-full mx-auto flex items-center h-full justify-between ">
-              <div className="max-w-[105px]  w-full cursor-pointer sm:h-[74px] h-[60px] flex flex-col sm:justify-between justify-center items-center">
-                <img
-                  className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/images/freetoearn.svg"
-                  alt=""
-                />
-                <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
-                  free to earn
-                </p>
-              </div>
-              <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
-                <img
-                  className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/images/ranking.svg"
-                  alt=""
-                />
-                <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
-                  Ranking
-                </p>
-              </div>
-              <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
-                <img
-                  className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/images/videonft.svg"
-                  alt=""
-                />
-                <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
-                  VIdeo-NFT
-                </p>
-              </div>
-              <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
-                <img
-                  className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/images/buy.svg"
-                  alt=""
-                />
-                <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
-                  How to buy
-                </p>
-              </div>
-              <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
-                <img
-                  className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/images/new.svg"
-                  alt=""
-                />
-                <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
-                  New NFTS
-                </p>
-              </div>
-              <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
-                <img
-                  className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/images/roadmap.svg"
-                  alt=""
-                />
-                <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
-                  Roadmaps
-                </p>
-              </div>
+              <ul className="flex w-full items-center justify-between">
+                {[
+                  {
+                    img: "/images/freetoearn.svg",
+                    text: "free to earn"
+                  },
+                  {
+                    img: "/images/ranking.svg",
+                    text: "Ranking"
+                  },
+                  {
+                    img: "/images/videonft.svg",
+                    text: "VIdeo-NFT"
+                  },
+                  {
+                    img: "/images/buy.svg",
+                    text: "How to buy"
+                  },
+                  {
+                    img: "/images/new.svg",
+                    text: "New NFTS"
+                  },
+                  {
+                    img: "/images/roadmap.svg",
+                    text: "Roadmaps"
+                  }
+                ].map((item) => (
+                  <li
+                    key={item.text}
+                    className="max-w-[105px] w-full cursor-pointer sm:h-[74px] h-[60px] flex flex-col sm:justify-between justify-center items-center"
+                  >
+                    <img
+                      className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
+                      src={item.img}
+                      alt=""
+                    />
+                    <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
+                      {item.text}
+                    </p>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          </section>
 
-          <div className="w-full sm:py-[80px] py-[40px]  ">
+          <section className="w-full sm:py-[80px] py-[40px]">
             <div className="max-w-[1128px] w-full sm:h-[301px] pl-[20px] sm:pl-0 mr-[-20px] flex flex-col gap-[8px] mb-[40px] sm:mx-auto">
               <div className="w-full flex justify-between items-center">
                 <p className="font-title text-[#FFC700] font-[900] italic sm:text-[32px] text-[24px] sm:leading-[48px] leading-[32px] tracking-[0%] align-middle uppercase">
@@ -224,7 +201,7 @@ function App() {
             </div>
 
             <div className="max-w-[1128px] w-full sm:px-0 px-[20px] flex flex-col sm:flex-row justify-between sm:gap-[24px] mx-auto">
-              <div className="max-w-[600px] w-full sm:h-[301px] flex flex-col mb-[40px] sm:mb-0 gap-[8px] mx-auto">
+              <section className="max-w-[600px] w-full sm:h-[301px] flex flex-col mb-[40px] sm:mb-0 gap-[8px] mx-auto">
                 <div className="w-full flex justify-between items-center">
                   <p className="font-title text-[#FFC700] font-[900] italic sm:text-[32px]  text-[24px] sm:leading-[48px] leading-[32px] tracking-[0%] align-middle uppercase">
                     NFT Drops Calendar
@@ -247,9 +224,9 @@ function App() {
                     />
                   </li>
                 </ul>
-              </div>
+              </section>
               <div className="flex sm:gap-[24px] gap-[16px]">
-                <div className="max-w-[240px] w-full sm:h-[301px] flex flex-col gap-[8px] mx-auto">
+                <section className="max-w-[240px] w-full sm:h-[301px] flex flex-col gap-[8px] mx-auto">
                   <div className="w-full flex justify-between">
                     <p className="font-title text-[#FFC700] font-[900] italic sm:text-[32px] text-[24px] sm:leading-[48px] leading-[32px] tracking-[0%] align-middle uppercase">
                       HOT NFT
@@ -264,9 +241,9 @@ function App() {
                       />
                     </li>
                   </ul>
-                </div>
+                </section>
 
-                <div className="max-w-[240px] w-full sm:h-[301px] flex flex-col gap-[8px] mx-auto">
+                <section className="max-w-[240px] w-full sm:h-[301px] flex flex-col gap-[8px] mx-auto">
                   <div className="w-full flex justify-between">
                     <p className="font-title text-[#FFC700] font-[900] italic sm:text-[32px] text-[24px] sm:leading-[48px] leading-[32px] tracking-[0%] align-middle uppercase">
                       PROMOTION
@@ -281,15 +258,15 @@ function App() {
                       />
                     </li>
                   </ul>
-                </div>
+                </section>
               </div>
             </div>
-          </div>
-        </div>
+          </section>
+        </main>
         <div className="border-t-[1px] border-white"></div>
-        <div className="py-[40px]  bg-black">
+        <footer className="py-[40px]  bg-black">
           <div className="grid max-w-[1128px] w-full text-white mx-auto sm:gap-[40px] gap-[16px] grid-cols-2 lg:grid-cols-4 sm:px-0 px-[20px]">
-            <div className="max-w-[252px] w-full">
+            <section className="max-w-[252px] w-full">
               <p className="font-title font-black italic text-[18px] leading-[28px] tracking-normal mb-[12px] uppercase">
                 About Us
               </p>
@@ -313,8 +290,8 @@ function App() {
                   Affiliate
                 </li>
               </ul>
-            </div>
-            <div className="max-w-[252px] w-full">
+            </section>
+            <section className="max-w-[252px] w-full">
               <p className="font-title font-black italic text-[18px] leading-[28px] tracking-normal mb-[12px] uppercase">
                 Products
               </p>
@@ -338,8 +315,8 @@ function App() {
                   Creator Dashboard
                 </li>
               </ul>
-            </div>
-            <div className="max-w-[252px] w-full">
+            </section>
+            <section className="max-w-[252px] w-full">
               <p className="font-title font-black italic text-[18px] leading-[28px] tracking-normal mb-[12px] uppercase">
                 Resources
               </p>
@@ -360,8 +337,8 @@ function App() {
                   Sitemap
                 </li>
               </ul>
-            </div>
-            <div className="max-w-[252px] w-full">
+            </section>
+            <section className="max-w-[252px] w-full">
               <p className="font-title font-black italic text-[18px] leading-[28px] tracking-normal mb-[12px] uppercase">
                 Contact Us
               </p>
@@ -380,9 +357,9 @@ function App() {
                   />
                 </li>
               </ul>
-            </div>
+            </section>
           </div>
-        </div>
+        </footer>
       </div>
     </>
   );
