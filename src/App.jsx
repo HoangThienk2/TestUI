@@ -13,15 +13,15 @@ function App() {
                 className="w-[24px] h-[19px] block sm:hidden"
                 src={
                   menuOpen
-                    ? "/public/images/close.svg"
-                    : "/public/images/menuicon.svg"
+                    ? "/images/close.svg"
+                    : "/images/menuicon.svg"
                 }
                 alt="menu"
                 onClick={() => setMenuOpen((prev) => !prev)}
               />
               <img
                 className="sm:w-[71px] sm:h-[39px] w-[72px] h-[36px]"
-                src="/public/images/logo.svg"
+                src="/images/logo.svg"
                 alt="logo"
               />
             </div>
@@ -79,7 +79,7 @@ function App() {
           <div className="w-full sm:h-[550px]  h-[180px] relative  ">
             <img
               className=" w-full h-full object-cover "
-              src="/public/images/banner1.png"
+              src="/images/banner1.png"
               alt=""
             />
             <ul className="absolute bottom-[12px] right-0 left-0 flex gap-[8px] justify-center">
@@ -100,7 +100,7 @@ function App() {
               <div className="max-w-[105px]  w-full cursor-pointer sm:h-[74px] h-[60px] flex flex-col sm:justify-between justify-center items-center">
                 <img
                   className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/public/images/freetoearn.svg"
+                  src="/images/freetoearn.svg"
                   alt=""
                 />
                 <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
@@ -110,7 +110,7 @@ function App() {
               <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
                 <img
                   className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/public/images/ranking.svg"
+                  src="/images/ranking.svg"
                   alt=""
                 />
                 <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
@@ -120,7 +120,7 @@ function App() {
               <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
                 <img
                   className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/public/images/videonft.svg"
+                  src="/images/videonft.svg"
                   alt=""
                 />
                 <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
@@ -130,7 +130,7 @@ function App() {
               <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
                 <img
                   className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/public/images/buy.svg"
+                  src="/images/buy.svg"
                   alt=""
                 />
                 <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
@@ -140,7 +140,7 @@ function App() {
               <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
                 <img
                   className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/public/images/new.svg"
+                  src="/images/new.svg"
                   alt=""
                 />
                 <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
@@ -150,7 +150,7 @@ function App() {
               <div className="max-w-[105px]  w-full cursor-pointer h-[74px] flex flex-col sm:justify-between justify-center items-center">
                 <img
                   className="sm:w-[53.44px] sm:h-[42px] w-[35.63px] h-[27.87px] sm:mb-[12px] mb-[8px]"
-                  src="/public/images/roadmap.svg"
+                  src="/images/roadmap.svg"
                   alt=""
                 />
                 <p className="font-body w-full font-normal sm:text-[14px] text-[10px] leading-[20px] tracking-[0%] text-center text-[#FFFFFF] uppercase">
@@ -231,10 +231,10 @@ function App() {
                   </p>
                   <div className="flex gap-[8px]">
                     <button className="sm:w-[40px] sm:h-[40px] w-[32px] h-[32px] cursor-pointer rounded-[12px] bg-[#383A42]  hover:opacity-80 flex justify-center items-center">
-                      <img src="/public/images/arrowleft.svg" alt="" />
+                      <img src="/images/arrowleft.svg" alt="" />
                     </button>
                     <button className="sm:w-[40px] sm:h-[40px] w-[32px] h-[32px] cursor-pointer rounded-[12px] bg-[#383A42] hover:opacity-80 flex justify-center items-center ">
-                      <img src="/public/images/arrowright.svg" alt="" />
+                      <img src="/images/arrowright.svg" alt="" />
                     </button>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ function App() {
                   <li className="max-w-[600px] w-full sm:h-[240px] h-[171px] rounded-[12px]">
                     <img
                       className="object-cover w-full h-full rounded-[12px]"
-                      src="/public/images/img7.png"
+                      src="/images/img7.png"
                       alt=""
                     />
                   </li>
@@ -259,7 +259,7 @@ function App() {
                     <li className="sm:w-[240px] w-[167px] h-[167px]  sm:h-[240px] rounded-[12px]">
                       <img
                         className="object-cover w-full h-full rounded-[12px]"
-                        src="/public/images/img8.png"
+                        src="/images/img8.png"
                         alt=""
                       />
                     </li>
@@ -276,7 +276,7 @@ function App() {
                     <li className="sm:w-[240px] w-[167px] h-[167px]  sm:h-[240px] rounded-[12px]">
                       <img
                         className="object-cover w-full h-full rounded-[12px]"
-                        src="/public/images/img9.png"
+                        src="/images/img9.png"
                         alt=""
                       />
                     </li>
@@ -375,7 +375,7 @@ function App() {
                 <li className="mt-[16px]">
                   <img
                     className="w-[151.4px] h-[44px] object-cover"
-                    src="/public/images/install.png"
+                    src="/images/install.png"
                     alt=""
                   />
                 </li>
