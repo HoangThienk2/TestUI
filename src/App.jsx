@@ -76,7 +76,7 @@ function App() {
         </div>
 
         <div className=" bg-black ">
-          <div className="w-full sm:h-[450px] h-[180px] relative  ">
+          <div className="w-full sm:h-[550px]  h-[180px] relative  ">
             <img
               className=" w-full h-full object-cover "
               src="/public/images/banner1.png"
