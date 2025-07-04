@@ -5,7 +5,7 @@ function HotNFT() {
   return (
     <section className="flex flex-col w-full gap-[8px] max-w-[240px] mx-auto sm:h-[301px]">
       <div className="flex justify-between w-full">
-        <h3 className="text-[#FFC700] text-[16px] barlow-semi-condensed-black-italic leading-[32px] sm:leading-[48px] sm:text-[24px] tracking-[0%] uppercase">
+        <h3 className="text-[#FFC700] text-[24px] sm:text-[32px] font-['Barlow_Semi_Condensed'] font-black italic leading-[48px] uppercase">
           HOT NFT
         </h3>
       </div>
