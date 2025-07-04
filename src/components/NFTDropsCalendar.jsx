@@ -25,27 +25,27 @@ function NFTDropsCalendar() {
   };
 
   return (
-    <section className="flex flex-col w-full gap-[8px] max-w-[600px] mb-[40px] mx-auto sm:h-[301px] sm:mb-0">
+    <section className="flex flex-col w-full gap-[8px] max-w-[600px] mb-[40px] mx-auto md:mb-0 md:h-[280px] lg:h-[301px]">
       <div className="flex justify-between w-full items-center">
-        <h3 className="text-[#FFC700] text-[24px] sm:text-[32px] font-['Barlow_Semi_Condensed'] font-black italic leading-[32px] sm:leading-[48px] uppercase">
+        <h3 className="text-[#FFC700] text-[24px] sm:text-[28px] lg:text-[32px] font-['Barlow_Semi_Condensed'] font-black italic leading-[32px] sm:leading-[40px] lg:leading-[48px] uppercase">
           NFT Drops Calendar
         </h3>
         <div className="flex gap-[8px]">
           <button
             onClick={onPrevClick}
-            className="flex bg-[#383A42] h-[32px] justify-center rounded-[12px] w-[32px] cursor-pointer hover:opacity-80 items-center sm:h-[40px] sm:w-[40px]"
+            className="flex bg-[#383A42] h-[32px] justify-center rounded-[12px] w-[32px] cursor-pointer hover:opacity-80 items-center sm:h-[36px] sm:w-[36px] lg:h-[40px] lg:w-[40px]"
           >
             <img src="/images/arrowleft.svg" alt="Previous" />
           </button>
           <button
             onClick={onNextClick}
-            className="flex bg-[#383A42] h-[32px] justify-center rounded-[12px] w-[32px] cursor-pointer hover:opacity-80 items-center sm:h-[40px] sm:w-[40px]"
+            className="flex bg-[#383A42] h-[32px] justify-center rounded-[12px] w-[32px] cursor-pointer hover:opacity-80 items-center sm:h-[36px] sm:w-[36px] lg:h-[40px] lg:w-[40px]"
           >
             <img src="/images/arrowright.svg" alt="Next" />
           </button>
         </div>
       </div>
-      <div className="h-[171px] rounded-[12px] w-full max-w-[600px] sm:h-[240px]">
+      <div className="h-[171px] rounded-[12px] w-full max-w-[600px] sm:h-[200px] md:h-[220px] lg:h-[240px]">
         <img
           className="h-full rounded-[12px] w-full object-cover transition-opacity duration-300"
           src={NFT_DROPS[currentIndex]}

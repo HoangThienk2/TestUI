@@ -24,7 +24,7 @@ function FeaturesBar() {
                       className="absolute flex sm:hidden flex-col justify-center items-center bg-[#FF0000] z-[1] rounded-[2.67px] w-[18.33px] h-[10.67px] -right-[6.73px] -top-[5.36px] p-[1.33px_2.67px]"
                     >
                       <span
-                        className="text-white text-center uppercase flex-none w-[13px] h-[8px] text-[5.33333px] leading-[8px] font-medium"
+                        className="text-white text-center uppercase flex-none w-[13px] h-[8px] text-[5.33333px] leading-[8px] "
                         style={{
                           fontFamily: 'Neue Haas Grotesk Text Pro VN'
                         }}
@@ -37,7 +37,7 @@ function FeaturesBar() {
                       className="absolute hidden sm:flex flex-col justify-center items-center bg-[#FF0000] z-[1] rounded-[4px] w-[41px] h-[20px] -right-[13.1px] -top-[8.04px] p-[2px_6px]"
                     >
                       <span
-                        className="text-white text-center uppercase flex-none text-[12px] leading-[16px] font-medium"
+                        className="text-white text-center uppercase flex-none text-[12px] leading-[16px] "
                         style={{
                           fontFamily: 'Neue Haas Grotesk Text Pro VN'
                         }}
@@ -48,7 +48,7 @@ function FeaturesBar() {
                   </>
                 )}
               </div>
-              <p className="text-[#FFFFFF] text-[10px] text-center  font-medium leading-[12px] sm:leading-[20px] sm:text-[14px] sm:font-normal tracking-[0%] uppercase flex-none order-1 self-stretch flex-grow-0" style={{ fontFamily: 'Neue Haas Grotesk Text Pro VN' }}>
+              <p className="text-[#FFFFFF] text-[10px] text-center   leading-[12px] sm:leading-[20px] sm:text-[14px] sm:font-normal tracking-[0%] uppercase flex-none order-1 self-stretch flex-grow-0" style={{ fontFamily: 'Neue Haas Grotesk Text Pro VN' }}>
                 {item.text === "VIdeo-NFT" ? (
                   <>
                     <span className="sm:hidden">VIDEO<br />NFT</span>

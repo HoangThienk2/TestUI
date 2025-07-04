@@ -22,7 +22,6 @@
   font-style: normal;
 }
 
-/* Thêm các phiên bản italic nếu cần */
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro VN";
   src: url("/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayRomanItalic.ttf")

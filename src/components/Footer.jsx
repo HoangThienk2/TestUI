@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <footer className="bg-[#131415] py-[40px] border-[#383A42] border-t-[1px]">
-      <div className="grid grid-cols-2 text-white w-full gap-[24px] lg:grid-cols-4 max-w-[1128px] mx-auto px-[20px] sm:gap-[40px] sm:px-0">
+      <div className="grid grid-cols-2 text-white w-full gap-[24px] max-w-[1128px] mx-auto px-[20px] md:px-[40px] lg:grid-cols-4 lg:gap-[40px] lg:px-0">
         <section className="w-full max-w-[252px] ">
           <p className="text-[18px] font-black font-['Barlow_Semi_Condensed'] italic leading-[28px] mb-[12px] tracking-normal uppercase">
             About Us

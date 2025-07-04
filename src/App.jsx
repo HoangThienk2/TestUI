@@ -24,11 +24,11 @@ function App() {
       <main className="bg-[#131415]">
         <Banner />
         <FeaturesBar />
-        <section className="w-full py-[40px] sm:py-[80px]">
+        <section className="w-full py-[40px] sm:py-[60px] lg:py-[80px]">
           <NFTCollections />
-          <div className="flex flex-col justify-between w-full max-w-[1128px] mx-auto px-[20px] sm:gap-[24px] sm:px-0 xl:flex-row">
+          <div className="flex flex-col w-full max-w-[1128px] mx-auto px-[20px] gap-[24px] md:px-[40px] lg:flex-row lg:justify-between lg:px-0">
             <NFTDropsCalendar />
-            <div className="flex gap-[16px] sm:gap-[24px]">
+            <div className="flex gap-[16px] sm:gap-[24px] justify-center lg:justify-start">
               <HotNFT />
               <Promotion />
             </div>
