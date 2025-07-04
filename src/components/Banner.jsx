@@ -1,41 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 import { BANNER_IMAGES } from "../constants/bannerImages";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+
 function Banner() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  // Auto slide functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) =>
-        prevSlide === BANNER_IMAGES.length - 1 ? 0 : prevSlide + 1
-      );
-    }, 4000); // Change slide every 4 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
   return (
     <section className="h-[180px] w-full lg:h-[450px] relative">
-      <img
-        className="h-full w-full banner-img-desktop object-bottom object-cover transition-opacity duration-500"
-        src={BANNER_IMAGES[currentSlide]}
-        alt={`Banner ${currentSlide + 1}`}
-      />
-      <ul className="flex justify-center absolute bottom-[8px] gap-[4px] left-0 right-0 sm:bottom-[20px] sm:gap-[12px]">
-        {BANNER_IMAGES.map((_, idx) => (
-          <li
-            key={idx}
-            className={`h-[4px] rounded-[20px] w-[16px] cursor-pointer hover:bg-[#FFC700] sm:h-[4px] sm:w-[28px] transition-all ${currentSlide === idx ? "bg-[#FFC700]" : "bg-white"
-              }`}
-            onClick={() => goToSlide(idx)}
-          ></li>
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        spaceBetween={0}
+        slidesPerView={1}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+          el: ".swiper-custom-pagination",
+          bulletClass: "swiper-custom-bullet",
+          bulletActiveClass: "swiper-custom-bullet-active",
+        }}
+        className="h-full"
+      >
+        {BANNER_IMAGES.map((image, idx) => (
+          <SwiperSlide key={idx}>
+            <img
+              className="h-full w-full banner-img-desktop object-bottom object-cover"
+              src={image}
+              alt={`Banner ${idx + 1}`}
+            />
+          </SwiperSlide>
         ))}
-      </ul>
+      </Swiper>
+      <div className="swiper-custom-pagination flex justify-center absolute bottom-[8px] gap-[4px] left-0 right-0 z-10 sm:bottom-[20px] sm:gap-[12px]" />
     </section>
   );
 }

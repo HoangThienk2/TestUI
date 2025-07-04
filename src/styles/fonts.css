@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro VN";
+  src: url("/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayRoman.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro VN";
+  src: url("/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayMediu.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro VN";
+  src: url("/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Thêm các phiên bản italic nếu cần */
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro VN";
+  src: url("/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayRomanItalic.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro VN";
+  src: url("/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayMediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro VN";
+  src: url("/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Swiper custom styles */
+.swiper-custom-bullet {
+  width: 16px;
+  height: 4px;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.swiper-custom-bullet:hover {
+  background: #ffc700;
+}
+
+.swiper-custom-bullet-active {
+  background: #ffc700;
+}
+
+@media (min-width: 640px) {
+  .swiper-custom-bullet {
+    width: 28px;
+    height: 4px;
+    margin: 0 6px;
+  }
+}

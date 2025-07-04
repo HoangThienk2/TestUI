@@ -7,13 +7,14 @@ import NFTCollections from "./components/NFTCollections";
 import NFTDropsCalendar from "./components/NFTDropsCalendar";
 import HotNFT from "./components/HotNFT";
 import Promotion from "./components/Promotion";
+import "./styles/fonts.css";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("HOME");
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full overflow-hidden">
       <Header
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
@@ -34,7 +35,6 @@ function App() {
           </div>
         </section>
       </main>
-      <div className="border-[#383A42] border-t-[1px]"></div>
       <Footer />
     </div>
   );
