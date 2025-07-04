@@ -30,7 +30,7 @@ function Banner() {
         {BANNER_IMAGES.map((_, idx) => (
           <li
             key={idx}
-            className={`h-[3px] rounded-[20px] w-[12px] cursor-pointer hover:bg-[#FFC700] sm:h-[4px] sm:w-[28px] transition-all ${currentSlide === idx ? "bg-[#FFC700]" : "bg-white"
+            className={`h-[4px] rounded-[20px] w-[16px] cursor-pointer hover:bg-[#FFC700] sm:h-[4px] sm:w-[28px] transition-all ${currentSlide === idx ? "bg-[#FFC700]" : "bg-white"
               }`}
             onClick={() => goToSlide(idx)}
           ></li>
