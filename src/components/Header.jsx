@@ -24,11 +24,10 @@ function Header({ menuOpen, setMenuOpen, activeMenu, setActiveMenu }) {
               {MOBILE_MENU_ITEMS.map((item) => (
                 <li
                   key={item}
-                  className={`w-full h-[48px] hover:bg-[#383A42] rounded-[100px] flex justify-center items-center font-body cursor-pointer font-medium text-[14px] leading-[20px] tracking-normal uppercase ${
-                    activeMenu === item.toUpperCase()
-                      ? "text-[#FFC700] bg-[#383A42]"
-                      : "text-[#D2D2D2]"
-                  }`}
+                  className={`w-full h-[48px] hover:bg-[#383A42] rounded-[100px] flex justify-center items-center font-['Neue_Haas_Grotesk_Text_Pro_VN'] font-style-normal cursor-pointer font-medium text-[14px] leading-[20px] tracking-normal uppercase ${activeMenu === item.toUpperCase()
+                    ? "text-[#FFC700] bg-[#383A42]"
+                    : "text-[#D2D2D2]"
+                    }`}
                   onClick={() => setActiveMenu(item.toUpperCase())}
                 >
                   {item}
@@ -37,15 +36,14 @@ function Header({ menuOpen, setMenuOpen, activeMenu, setActiveMenu }) {
             </ul>
           </div>
         )}
-        <ul className="text-[14px] font-[500] font-body hidden leading-[20px] sm:flex tracking-[0%] uppercase">
+        <ul className="text-[14px] font-[500] font-['Neue_Haas_Grotesk_Text_Pro_VN'] font-style-normal hidden leading-[20px] sm:flex tracking-[0%] uppercase">
           {MENU_ITEMS.map((item) => (
             <li
               key={item}
-              className={`w-[80px] uppercase cursor-pointer h-[40px] rounded-full hover:bg-[#383A42] flex justify-center items-center  ${
-                activeMenu === item
-                  ? "bg-[#383A42] text-[#FFC700]"
-                  : "text-white hover:text-[#FFC700]"
-              }`}
+              className={`w-[80px] uppercase cursor-pointer h-[40px] rounded-full hover:bg-[#383A42] flex justify-center items-center  ${activeMenu === item
+                ? "bg-[#383A42] text-[#FFC700]"
+                : "text-[#D2D2D2] hover:text-[#FFC700]"
+                }`}
               onClick={() => setActiveMenu(item)}
             >
               {item}
@@ -57,7 +55,7 @@ function Header({ menuOpen, setMenuOpen, activeMenu, setActiveMenu }) {
         <button className="align-middle bg-[#FFC700] h-[36px] rounded-full text-[#1F1F1F] text-[16px] text-center w-[98px] barlow-semi-condensed-black cursor-pointer font-extrabold font-title hover:bg-[#C79B12] italic leading-[24px] sm:h-[40px] sm:w-[114px] tracking-[0%] uppercase">
           SIGN UP
         </button>
-        <button className="align-middle border-[#FFC700] border-[1px] h-[36px] rounded-full text-[#D2D2D2] text-[16px] text-center w-[98px] barlow-semi-condensed-black cursor-pointer font-extrabold font-title hover:border-[#FFE8AB] italic leading-[24px] sm:h-[40px] sm:w-[114px] tracking-[0%] uppercase">
+        <button className="align-middle border-[#FFC700] border-[1px] h-[36px] rounded-full text-[#D2D2D2] text-[16px] text-center w-[90px] barlow-semi-condensed-black cursor-pointer font-extrabold font-title hover:border-[#FFE8AB] italic leading-[24px] sm:h-[40px] sm:w-[106px] tracking-[0%] uppercase">
           LOG IN
         </button>
       </div>

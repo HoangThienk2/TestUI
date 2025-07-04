@@ -48,7 +48,7 @@ function FeaturesBar() {
                   </>
                 )}
               </div>
-              <p className="text-[#FFFFFF] text-[10px] text-center w-full font-body font-normal leading-[12px] sm:leading-[20px] sm:text-[14px] tracking-[0%] uppercase mb-auto">
+              <p className="text-[#FFFFFF] text-[10px] text-center  font-medium leading-[12px] sm:leading-[20px] sm:text-[14px] sm:font-normal tracking-[0%] uppercase flex-none order-1 self-stretch flex-grow-0" style={{ fontFamily: 'Neue Haas Grotesk Text Pro VN' }}>
                 {item.text === "VIdeo-NFT" ? (
                   <>
                     <span className="sm:hidden">VIDEO<br />NFT</span>

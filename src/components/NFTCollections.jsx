@@ -5,7 +5,7 @@ function NFTCollections() {
   return (
     <div className="flex flex-col w-full gap-[8px] max-w-[1128px] mb-[40px] pl-[20px] sm:mx-auto sm:pl-0">
       <div className="flex justify-between w-full items-center">
-        <h3 className="text-[#FFC700] text-[24px] sm:text-[32px] font-['Barlow_Semi_Condensed'] font-black italic leading-[48px] uppercase">
+        <h3 className="text-[#FFC700] text-[24px] sm:text-[32px] font-['Barlow_Semi_Condensed'] font-black italic leading-[32px] sm:leading-[48px] uppercase">
           New NFT Collections
         </h3>
         <div className="flex gap-[8px] mr-[20px] sm:mr-0">
@@ -19,7 +19,7 @@ function NFTCollections() {
       </div>
 
       {/* Main image container */}
-      <div className="flex flex-row items-center gap-[8px] w-full h-[140px] overflow-x-auto sm:gap-[16px] sm:w-[1356px] sm:h-[245px]">
+      <div className="flex flex-row items-center gap-[8px] max-w-[1128px] h-[140px] overflow-x-auto sm:gap-[16px] sm:w-[1356px] sm:h-[245px]">
         {NFT_COLLECTIONS.map((img, idx) => (
           <div
             key={img}
