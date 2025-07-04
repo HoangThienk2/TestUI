@@ -1,7 +1,7 @@
 import { MENU_ITEMS, MOBILE_MENU_ITEMS } from "../constants/menu";
 import React from "react";
 
-function Header({ menuOpen, setMenuOpen, activeMenu, setActiveMenu }) {
+function Header({ menuOpen, setMenuOpen, activeMenu, setActiveMenu, signUpDisabled = false, logInDisabled = false }) {
   return (
     <header className="flex bg-[#131415] h-[60px] justify-center w-full items-center px-[20px] sm:h-[80px] sm:px-[40px]">
       <div className="flex justify-between w-full max-w-[1600px] items-center">
@@ -53,10 +53,22 @@ function Header({ menuOpen, setMenuOpen, activeMenu, setActiveMenu }) {
           </ul>
         </nav>
         <div className="flex gap-[8px]">
-          <button className="align-middle bg-[#FFC700] h-[36px] rounded-full text-[#1F1F1F] text-[16px] text-center w-[98px] barlow-semi-condensed-black cursor-pointer font-extrabold font-title hover:bg-[#C79B12] italic leading-[24px] sm:h-[40px] sm:w-[114px] tracking-[0%] uppercase">
+          <button
+            disabled={signUpDisabled}
+            className={`align-middle bg-[#FFC700] h-[36px] rounded-full text-[#1F1F1F] text-[16px] text-center w-[98px] barlow-semi-condensed-black font-extrabold font-title italic leading-[24px] sm:h-[40px] sm:w-[114px] tracking-[0%] uppercase ${signUpDisabled
+              ? 'opacity-40 cursor-not-allowed'
+              : 'cursor-pointer hover:bg-[#C79B12]'
+              }`}
+          >
             SIGN UP
           </button>
-          <button className="align-middle border-[#FFC700] border-[1px] h-[36px] rounded-full text-[#D2D2D2] text-[16px] text-center w-[90px] barlow-semi-condensed-black cursor-pointer font-extrabold font-title hover:border-[#FFE8AB] italic leading-[24px] sm:h-[40px] sm:w-[106px] tracking-[0%] uppercase">
+          <button
+            disabled={logInDisabled}
+            className={`align-middle border-[#FFC700] border-[1px] h-[36px] rounded-full text-[#D2D2D2] text-[16px] text-center w-[90px] barlow-semi-condensed-black font-extrabold font-title italic leading-[24px] sm:h-[40px] sm:w-[106px] tracking-[0%] uppercase ${logInDisabled
+              ? 'opacity-40 cursor-not-allowed'
+              : 'cursor-pointer hover:border-[#FFE8AB]'
+              }`}
+          >
             LOG IN
           </button>
         </div>

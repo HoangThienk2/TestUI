@@ -20,6 +20,8 @@ function App() {
         setMenuOpen={setMenuOpen}
         activeMenu={activeMenu}
         setActiveMenu={setActiveMenu}
+        signUpDisabled={false}
+        logInDisabled={false}
       />
       <main className="bg-[#131415]">
         <Banner />
